@@ -19,7 +19,7 @@ phases:
       - apt-get install docker.io -y
       - dockerd &
       - sleep 10
-      - docker build --privileged -t nikusharoot/hts_app .
+      - docker build -t nikusharoot/hts_app .
   post_build:
     commands:
       - docker push nikusharoot/hts_app

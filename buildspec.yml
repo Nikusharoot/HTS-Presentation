@@ -15,7 +15,7 @@ phases:
       - npm test
   build:
     commands:
-      - docker build -t nikusharoot/hts_app .
+      - sudo docker build -t nikusharoot/hts_app .
   post_build:
     commands:
-      - docker push nikusharoot/hts_app
+      - sudo docker push nikusharoot/hts_app

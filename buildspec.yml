@@ -5,7 +5,20 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - npm i npm@latest -g
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
       - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+  pre_build:
+    commands:
+      - npm install
+      - npm test
+  build:
+    commands:
       - apt-get update -y
       - apt-get install docker.io -y
-      - sudo systemctl start docker
+      - service docker start
+      - docker build --privileged -t nikusharoot/hts_app .
+  post_build:
+    commands:
+      - docker push nikusharoot/hts_app

@@ -8,6 +8,8 @@ phases:
       - npm i npm@latest -g
       - pip install --upgrade pip
       - pip install --upgrade awscli
+      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
       - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
   pre_build:
     commands:

@@ -1,0 +1,23 @@
+{
+  "name": "HTS-Presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikusharoot/HTS-Presentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikusharoot/HTS-Presentation/issues"
+  },
+  "homepage": "https://github.com/Nikusharoot/HTS-Presentation#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^6.2.1"
+  }
+}

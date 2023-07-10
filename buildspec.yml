@@ -17,7 +17,7 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install docker.io -y
-
+      - service docker start
       - docker build -t nikusharoot/hts_app .
   post_build:
     commands:
